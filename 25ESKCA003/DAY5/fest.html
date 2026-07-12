@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pravah Fest 2026</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff9800, #ff5722);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .hero {text-align:center; padding:80px 20px;}
+    .hero h1 {font-size:3.5rem; font-weight:bold; text-shadow:2px 2px 12px rgba(0,0,0,0.6);}
+    .countdown {font-size:1.5rem; margin-top:20px; font-weight:bold; color:#ffeb3b;}
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      border-radius: 15px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+    .card:hover {transform: translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.4);}
+    .form-section {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      padding: 50px;
+      border-radius: 20px;
+      margin-top: 50px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .form-control, .form-select {border-radius:10px; border:none; padding:14px;}
+    .form-control:focus, .form-select:focus {box-shadow:0 0 15px #ff9800; outline:none;}
+    .btn-custom {
+      background: linear-gradient(45deg, #ff9800, #ff5722);
+      color:#fff; font-weight:bold; border-radius:10px; padding:14px;
+      transition: transform 0.3s;
+    }
+    .btn-custom:hover {transform:scale(1.08);}
+    footer {text-align:center; padding:25px; margin-top:50px; background:rgba(0,0,0,0.4); border-radius:12px;}
+    /* Modal themed backgrounds */
+    .modal-content {color:#fff; border-radius:15px;}
+    .rawaz-bg {background: linear-gradient(135deg,#ff9a9e,#fad0c4);}
+    .treasure-bg {background: linear-gradient(135deg,#a1c4fd,#c2e9fb);}
+    .murder-bg {background: linear-gradient(135deg,#434343,#000000);}
+    .dj-bg {background: linear-gradient(135deg,#ff6a00,#ee0979);}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>🎉 Pravah Fest 2026 🎉</h1>
+    <p>3 days of fun, creativity, and unforgettable experiences!</p>
+    <p><strong>Date:</strong> 10th July onwards</p>
+    <div id="countdown" class="countdown"></div>
+  </section>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 mb-4"><div class="card p-4" data-bs-toggle="modal" data-bs-target="#rawazModal"><h4>Rawaz</h4><p>Ramp walk extravaganza</p></div></div>
+      <div class="col-md-3 mb-4"><div class="card p-4" data-bs-toggle="modal" data-bs-target="#treasureModal"><h4>Treasure Hunt</h4><p>Decode clues & find treasures</p></div></div>
+      <div class="col-md-3 mb-4"><div class="card p-4" data-bs-toggle="modal" data-bs-target="#murderModal"><h4>Murder Mystery</h4><p>Solve the thrilling case</p></div></div>
+      <div class="col-md-3 mb-4"><div class="card p-4" data-bs-toggle="modal" data-bs-target="#djModal"><h4>DJ Night</h4><p>Dance the night away</p></div></div>
+    </div>
+  </div>
+
+  <div class="container form-section">
+    <h2 class="text-center mb-4">Register Now</h2>
+    <form id="registrationForm">
+      <div class="mb-3"><label class="form-label">Full Name</label><input type="text" class="form-control" id="name" required></div>
+      <div class="mb-3"><label class="form-label">Branch</label>
+        <select class="form-select" id="branch" required>
+          <option value="">Choose your branch...</option>
+          <option>Computer Science</option><option>Electronics</option><option>Mechanical</option>
+          <option>Civil</option><option>Electrical</option><option>Other</option>
+        </select>
+      </div>
+      <div class="mb-3"><label class="form-label">Email Address</label><input type="email" class="form-control" id="email" required></div>
+      <div class="mb-3"><label class="form-label">Phone Number</label><input type="tel" class="form-control" id="phone" required></div>
+      <div class="mb-3"><label class="form-label">Select Event</label>
+        <select class="form-select" id="event" required>
+          <option value="">Choose...</option><option>Rawaz</option><option>Treasure Hunt</option><option>Murder Mystery</option><option>DJ Night</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-custom w-100">Submit Registration</button>
+    </form>
+    <div id="confirmation" class="mt-3 text-center"></div>
+  </div>
+
+  <footer><p>© 2026 Pravah Fest | Organized by College Cultural Committee</p></footer>
+
+  <!-- Rawaz Modal -->
+  <div class="modal fade" id="rawazModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content rawaz-bg p-4">
+    <h2>Rawaz – Ramp Walk Extravaganza</h2>
+    <p><strong>Timing:</strong> 5:00 PM – 8:00 PM</p>
+    <p>Rawaz is the glamorous ramp walk show of Pravah Fest. It’s a celebration of fashion, confidence, and creativity where students showcase their style and charisma on stage.</p>
+    <ul><li>Fashion themes and creative outfits</li><li>Spotlight moments for participants</li><li>Titles for Best Walk, Best Style, Best Personality</li></ul>
+  </div></div></div>
+
+  <!-- Treasure Hunt Modal -->
+  <div class="modal fade" id="treasureModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content treasure-bg p-4">
+    <h2>Treasure Hunt</h2>
+    <p><strong>Timing:</strong> 10:00 AM – 1:00 PM</p>
+    <p>Treasure Hunt is an adventurous race across the campus! Teams decode riddles, solve puzzles, and follow hidden clues to reach the final treasure.</p>
+    <ul><li>Brain‑teasing riddles and challenges</li><li>Explore hidden corners of the campus</li><li>Test teamwork, speed, and wit</li><li>Exciting prizes for winners</li></ul>
+  </div></div></div>
+
+  <!-- Murder Mystery Modal -->
+  <div class="modal fade" id="murderModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content murder-bg p-4">
+    <h2>Murder Mystery</h2>
+    <p><strong>Timing:</strong> 2:00 PM – 5:00 PM</p>
+    <p>Step into the world of suspense and intrigue! Work with your team to analyze clues, interrogate suspects, and solve the thrilling murder mystery before time runs out.</p>
+    <ul><li>Immersive storytelling and roleplay</li><li>Puzzle solving and clue hunting</li><li>Compete against other teams</li></ul>
+  </div></div></div>
+</body>
+</html>
